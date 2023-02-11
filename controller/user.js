@@ -16,7 +16,8 @@ exports.register = async(req,res)=>{
         const token = await user.generateToken();
         const option ={
             expires: new Date(Date.now()+(1000 *60*60*24*30)),
-            httpOnly: true
+            httpOnly: true,
+            secure: true
         }
         res.status(201).cookie("token",token,option).json({
             success: true,
@@ -59,7 +60,8 @@ exports.login = async(req,res)=>{
     const token = await user.generateToken();
     const option = {
         expires: new Date(Date.now()+(1000 *60*60*24*30))
-        ,httpOnly: true 
+        ,httpOnly: true,
+        secure: true
     }
 
     res.status(200).cookie("token",token,option).json({
