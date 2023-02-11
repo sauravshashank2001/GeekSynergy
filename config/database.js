@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const DB_URI = "mongodb://localhost:27017/geeksynergy";
+const DB_URI = "mongodb+srv://sauravshashank27:yoyohoney@cluster0.wlyvnmn.mongodb.net/geekSynergy?retryWrites=true";
 
 
 exports.connectDatabase = () => { 
